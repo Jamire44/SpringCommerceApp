@@ -1,27 +1,32 @@
 package com.jamie.simpleWebApp.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import org.springframework.stereotype.Component;
 
 @Component
+@Entity
 public class Product {
 
     public Product() {}
 
-    public Product(int prodId, String prodName, int prodPrice) {
+    public Product(Long prodId, String prodName, int prodPrice) {
         this.prodId = prodId;
         this.prodName = prodName;
         this.prodPrice = prodPrice;
     }
 
-    private int prodId;
+    @Id
+    private Long prodId;
     private String prodName;
     private int prodPrice;
 
-    public int getProdId() {
+    public Long getProdId() {
         return prodId;
     }
 
-    public void setProdId(int prodId) {
+    public void setProdId(Long prodId) {
         this.prodId = prodId;
     }
 
